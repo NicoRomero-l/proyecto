@@ -1,0 +1,31 @@
+[
+  {"categoria": "Pizzas", "nombre": "Margarita", "precio": 8.50},
+  {"categoria": "Pizzas", "nombre": "Pepperoni", "precio": 9.50},
+  {"categoria": "Pizzas", "nombre": "Hawaiana", "precio": 9.50},
+  {"categoria": "Pizzas", "nombre": "Vegetariana", "precio": 9.00},
+  {"categoria": "Pizzas", "nombre": "Cuatro quesos", "precio": 10.50},
+  {"categoria": "Pizzas", "nombre": "Especial de la casa", "precio": 11.50},
+
+  {"categoria": "Combos", "nombre": "Combo Individual", "precio": 10.00},
+  {"categoria": "Combos", "nombre": "Combo Pareja", "precio": 18.00},
+  {"categoria": "Combos", "nombre": "Combo Familiar", "precio": 28.00},
+  {"categoria": "Combos", "nombre": "Combo Fiesta", "precio": 45.00},
+
+  {"categoria": "Bebidas", "nombre": "Coca-Cola personal", "precio": 1.50},
+  {"categoria": "Bebidas", "nombre": "Coca-Cola 1L", "precio": 3.00},
+  {"categoria": "Bebidas", "nombre": "Coca-Cola 2L", "precio": 4.50},
+  {"categoria": "Bebidas", "nombre": "Sprite personal", "precio": 1.50},
+  {"categoria": "Bebidas", "nombre": "Fanta personal", "precio": 1.50},
+  {"categoria": "Bebidas", "nombre": "Jugo natural", "precio": 2.00},
+  {"categoria": "Bebidas", "nombre": "Agua sin gas", "precio": 1.00},
+  {"categoria": "Bebidas", "nombre": "Agua con gas", "precio": 1.20},
+
+  {"categoria": "Postres", "nombre": "Volcán de chocolate", "precio": 3.50},
+  {"categoria": "Postres", "nombre": "Cheesecake", "precio": 3.50},
+  {"categoria": "Postres", "nombre": "Helado", "precio": 2.50},
+  {"categoria": "Postres", "nombre": "Tiramisú", "precio": 4.00},
+
+  {"categoria": "Otros", "nombre": "Alitas de pollo", "precio": 5.00},
+  {"categoria": "Otros", "nombre": "Papas fritas", "precio": 3.00},
+  {"categoria": "Otros", "nombre": "Pan de ajo", "precio": 2.50}
+]
