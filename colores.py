@@ -26,11 +26,14 @@ verde_claro="#7CB342"
 amarillo="#F5D742"
 amarillo_suave="#FFF3CD"
 
+texto="#2B1810"
+texto_claro="#FFFFFF"
+
 # estilos 
 
 titulo=("Georgia", 20, "bold")
 subtitulo=("Georgia", 14, "bold")
 letra_grande=("Segoe UI", 13, "bold")
 letra_normal=("Segoe UI", 11)
-letra_pequeña=("Segoe UI", 9)
+letra_pequena=("Segoe UI", 9)
 letra_de_botones=("Segoe UI", 12, "bold")
