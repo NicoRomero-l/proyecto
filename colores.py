@@ -1,13 +1,13 @@
 ## paleta de colores de todo el interfaz gráfico y estilos
 
-#colores principales de fondos
+# colores principales de fondos
 
 crema="#FDF5E6"
 crema_oscuro="#F2E8D5"
 blanco_oscuro="#FFF8F0"
 cafe_oscuro_fondo="#2B1810"
 
-#colores decorativos
+# colores decorativos
 
 cafe_oscuro="#3C2415"
 cafe_medio="#8B6914"
