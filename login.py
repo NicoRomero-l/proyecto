@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-##ventana de login 
-
->>>>>>> cdfd3f53a63972ca271a950fab50f2b68c9e7cb4
 import tkinter as tk
 from tkinter import messagebox
 from herramientas import (cargar_usuarios, login_usuario, guardar_recordar, cargar_recordar, borrar_recordar)
@@ -10,7 +5,7 @@ from colores import *
 from imagenes import (cargar_logos, cargar_icono_usuario, cargar_icono_contrasena, cargar_icono_login)
 
 def boton_estilo(parent, texto_boton, comando, color_fondo=rojo, icono=None):
-    btn=tk.Button(
+    pulsador = tk.Button(
         parent,
         text=texto_boton,
         command=comando,
@@ -25,61 +20,50 @@ def boton_estilo(parent, texto_boton, comando, color_fondo=rojo, icono=None):
     )
     
     if icono:
-        btn.config(image=icono, compound="left")
-        parent.image=icono
+        pulsador.config(image=icono, compound="left")
+        parent.image = icono
     
-    def hover_on(e):
-        btn.config(bg=rojo_fuerte_claro if color_fondo == rojo else cafe_claro)
+    pulsador.bind("<Enter>", lambda evento: pulsador.config(bg=rojo_fuerte_claro if color_fondo == rojo else cafe_claro))
+    pulsador.bind("<Leave>", lambda evento: pulsador.config(bg=color_fondo))
     
-    def hover_off(e):
-        btn.config(bg=color_fondo)
-    
-    btn.bind("<Enter>", hover_on)
-    btn.bind("<Leave>", hover_off)
-    
-    return btn
+    return pulsador
 
 def abrir_login():
-    login=tk.Tk()
-    login.title("Romereus Pizzeria - Login")
-    login.geometry("440x540")
-    login.config(bg=crema)
+    escenario_autenticacion = tk.Tk()
+    escenario_autenticacion.title("Romereus Pizzeria - Login")
+    escenario_autenticacion.geometry("440x540")
+    escenario_autenticacion.config(bg=crema)
     
-    frame_logo=tk.Frame(login, bg=crema)
-    frame_logo.pack(pady=(30, 10))
+    bloque_emblema = tk.Frame(escenario_autenticacion, bg=crema)
+    bloque_emblema.pack(pady=(30, 10))
     
-    logo_img=cargar_logos((200, 70))
+    recurso_grafico_logo = cargar_logos((200, 70))
     
-    if logo_img:
-        label_logo=tk.Label(frame_logo, image=logo_img, bg=crema)
-        label_logo.pack()
-        label_logo.image=logo_img
+    if recurso_grafico_logo:
+        rotulo_logo = tk.Label(bloque_emblema, image=recurso_grafico_logo, bg=crema)
+        rotulo_logo.pack()
+        rotulo_logo.image = recurso_grafico_logo
     else:
         tk.Label(
-            frame_logo,
+            bloque_emblema,
             text="ROMERAUS",
             font=("Georgia", 34, "bold"),
             bg=crema,
             fg=rojo
         ).pack()
         
-        tk.Frame(
-            frame_logo,
-            bg=rojo,
-            height=2,
-            width=180
-        ).pack(pady=(3, 3))
+        tk.Frame(bloque_emblema, bg=rojo, height=2, width=180).pack(pady=(3, 3))
         
         tk.Label(
-            frame_logo,
+            bloque_emblema,
             text="Pizzeria & Restaurante",
             font=("Georgia", 12, "italic"),
             bg=crema,
             fg=cafe_oscuro
         ).pack()
     
-    tarjeta=tk.Frame(
-        login,
+    tarjeta_credenciales = tk.Frame(
+        escenario_autenticacion,
         bg=crema_oscuro,
         relief="raised",
         bd=3,
@@ -88,73 +72,44 @@ def abrir_login():
         padx=35,
         pady=25
     )
-    tarjeta.pack(padx=35, pady=(10, 25), fill="both", expand=True)
+    tarjeta_credenciales.pack(padx=35, pady=(10, 25), fill="both", expand=True)
     
-    usuarios=cargar_usuarios()
-    usuario_var=tk.StringVar()
-    contrasena_var=tk.StringVar()
-    recordar_var=tk.BooleanVar()
+    banco_identidades = cargar_usuarios()
+    cadena_usuario_var = tk.StringVar()
+    cadena_clave_var = tk.StringVar()
+    bandera_recordar_var = tk.BooleanVar()
     
-    icono_user=cargar_icono_usuario()
-    icono_pass=cargar_icono_contrasena()
+    icono_user = cargar_icono_usuario()
+    icono_pass = cargar_icono_contrasena()
 
-    frame_user=tk.Frame(tarjeta, bg=crema_oscuro)
-    frame_user.pack(fill="x", pady=(0, 3))
-    
-    if icono_user:
-        tk.Label(frame_user, image=icono_user, bg=crema_oscuro).pack(side="left", padx=(0, 5))
-        frame_user.image=icono_user
-    
-    tk.Label(
-        frame_user,
-        text="Usuario",
-        bg=crema_oscuro,
-        fg=texto,
-        font=letra_normal,
-        anchor="w"
-    ).pack(side="left")
-    
-    entrada_usuario=tk.Entry(
-        tarjeta,
-        textvariable=usuario_var,
-        font=letra_normal,
-        bg=crema,
-        relief="solid",
-        bd=2
-    )
-    entrada_usuario.pack(fill="x", pady=(0, 15))
+    def _construir_campo_formulario(padre_contenedor, etiqueta_rotulo, variable_almacen, recurso_icono, es_clave=False):
+        bloque_fila = tk.Frame(padre_contenedor, bg=crema_oscuro)
+        bloque_fila.pack(fill="x", pady=(0, 3))
+        
+        if recurso_icono:
+            tk.Label(bloque_fila, image=recurso_icono, bg=crema_oscuro).pack(side="left", padx=(0, 5))
+            bloque_fila.image = recurso_icono
+        
+        tk.Label(bloque_fila, text=etiqueta_rotulo, bg=crema_oscuro, fg=texto, font=letra_normal, anchor="w").pack(side="left")
+        
+        campo_entrada = tk.Entry(
+            padre_contenedor,
+            textvariable=variable_almacen,
+            font=letra_normal,
+            bg=crema,
+            relief="solid",
+            bd=2,
+            show="*" if es_clave else ""
+        )
+        campo_entrada.pack(fill="x", pady=(0, 15))
 
-    frame_pass=tk.Frame(tarjeta, bg=crema_oscuro)
-    frame_pass.pack(fill="x", pady=(0, 3))
-    
-    if icono_pass:
-        tk.Label(frame_pass, image=icono_pass, bg=crema_oscuro).pack(side="left", padx=(0, 5))
-        frame_pass.image=icono_pass
-    
-    tk.Label(
-        frame_pass,
-        text="Contraseña",
-        bg=crema_oscuro,
-        fg=texto,
-        font=letra_normal,
-        anchor="w"
-    ).pack(side="left")
-    
-    entrada_contrasena=tk.Entry(
-        tarjeta,
-        textvariable=contrasena_var,
-        font=letra_normal,
-        bg=crema,
-        relief="solid",
-        bd=2,
-        show="*"
-    )
-    entrada_contrasena.pack(fill="x", pady=(0, 15))
+    _construir_campo_formulario(tarjeta_credenciales, "Usuario", cadena_usuario_var, icono_user)
+    _construir_campo_formulario(tarjeta_credenciales, "Contraseña", cadena_clave_var, icono_pass, es_clave=True)
     
     tk.Checkbutton(
-        tarjeta,
+        tarjeta_credenciales,
         text="Recordarme",
-        variable=recordar_var,
+        variable=bandera_recordar_var,
         bg=crema_oscuro,
         fg=texto,
         font=letra_normal,
@@ -162,51 +117,45 @@ def abrir_login():
         activebackground=crema_oscuro
     ).pack(anchor="w", pady=(0, 15))
     
-    label_estado=tk.Label(
-        tarjeta,
-        text="",
-        fg=rojo,
-        bg=crema_oscuro,
-        font=letra_normal
-    )
-    label_estado.pack()
+    etiqueta_notificaciones = tk.Label(tarjeta_credenciales, text="", fg=rojo, bg=crema_oscuro, font=letra_normal)
+    etiqueta_notificaciones.pack()
     
-    def entrar():
-        usuario=usuario_var.get().strip()
-        contrasena=contrasena_var.get().strip()
+    def ejecutar_validar_ingreso():
+        usuario_ingresado = cadena_usuario_var.get().strip()
+        clave_ingresada = cadena_clave_var.get().strip()
         
-        if usuario == "" or contrasena == "":
-            label_estado.config(text="Complete todos los campos")
+        if usuario_ingresado == "" or clave_ingresada == "":
+            etiqueta_notificaciones.config(text="Complete todos los campos")
             return
         
-        if login_usuario(usuario, contrasena, usuarios):
-            if recordar_var.get():
-                guardar_recordar(usuario, contrasena)
+        if login_usuario(usuario_ingresado, clave_ingresada, banco_identidades):
+            if bandera_recordar_var.get():
+                guardar_recordar(usuario_ingresado, clave_ingresada)
             else:
                 borrar_recordar()
             
-            messagebox.showinfo("Bienvenido", f"Hola {usuario}")
-            login.destroy()
+            messagebox.showinfo("Bienvenido", f"Hola {usuario_ingresado}")
+            escenario_autenticacion.destroy()
             from menu_pedidos import abrir_menu
-            abrir_menu(usuario)
+            abrir_menu(usuario_ingresado)
         else:
-            label_estado.config(text="Usuario o contrasena incorrectos")
+            etiqueta_notificaciones.config(text="Usuario o contrasena incorrectos")
     
-    frame_botones=tk.Frame(tarjeta, bg=crema_oscuro)
-    frame_botones.pack(pady=(15, 0))
+    panel_botones_accion = tk.Frame(tarjeta_credenciales, bg=crema_oscuro)
+    panel_botones_accion.pack(pady=(15, 0))
     
-    icono_login=cargar_icono_login()
-    btn_login=boton_estilo(frame_botones, " Ingresar", entrar, rojo, icono_login)
+    icono_login = cargar_icono_login()
+    btn_login = boton_estilo(panel_botones_accion, " Ingresar", ejecutar_validar_ingreso, rojo, icono_login)
     btn_login.pack(side="left", padx=5)
     
-    datos_guardados=cargar_recordar()
-    if datos_guardados:
-        usuario_var.set(datos_guardados.get("usuario", ""))
-        contrasena_var.set(datos_guardados.get("contrasena", ""))
-        recordar_var.set(True)
+    credenciales_persistidas = cargar_recordar()
+    if credenciales_persistidas:
+        cadena_usuario_var.set(credenciales_persistidas.get("usuario", ""))
+        cadena_clave_var.set(credenciales_persistidas.get("contrasena", ""))
+        bandera_recordar_var.set(True)
     
-    login.bind("<Return>", lambda e: entrar())
-    login.mainloop()
+    escenario_autenticacion.bind("<Return>", lambda evento: ejecutar_validar_ingreso())
+    escenario_autenticacion.mainloop()
 
 if __name__ == "__main__":
     abrir_login()
