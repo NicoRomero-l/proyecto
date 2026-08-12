@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+##ventana de login 
+
+>>>>>>> cdfd3f53a63972ca271a950fab50f2b68c9e7cb4
 import tkinter as tk
 from tkinter import messagebox
 from herramientas import (cargar_usuarios, login_usuario, guardar_recordar, cargar_recordar, borrar_recordar)

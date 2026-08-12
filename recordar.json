@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {
     "usuario": "nico",
     "contrasena": "clave123"
 }
+=======
+{"usuario": "admin", "contrasena": "1234"}
+>>>>>>> cdfd3f53a63972ca271a950fab50f2b68c9e7cb4

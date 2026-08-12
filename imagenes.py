@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+## cargador de imagenes y logotipos
+
+>>>>>>> cdfd3f53a63972ca271a950fab50f2b68c9e7cb4
 import os 
 from PIL import Image, ImageTk
 
