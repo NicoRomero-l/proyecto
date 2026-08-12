@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 ##ventana de recoleccion de pedidos 
 
->>>>>>> cdfd3f53a63972ca271a950fab50f2b68c9e7cb4
 import tkinter as tk
 from colores import *
 from herramientas import (cargar_menu, mostrar_categoria, confirmar_pedido, eliminar_producto, mostrar_historial)
@@ -18,11 +15,8 @@ def abrir_menu(usuario_actual=None):
 
     menu_ventana=tk.Tk()
     menu_ventana.title(f"Menú - Romereus Pizzeria ({usuario_actual if usuario_actual else 'Invitado'})")
-<<<<<<< HEAD
     menu_ventana.geometry("750x720")
-=======
     menu_ventana.geometry("1080x720")
->>>>>>> cdfd3f53a63972ca271a950fab50f2b68c9e7cb4
     menu_ventana.config(bg=crema)
 
     frame_categorias=tk.Frame(menu_ventana, bg=cafe_oscuro_fondo)
