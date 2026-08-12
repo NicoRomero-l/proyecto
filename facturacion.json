@@ -1,0 +1,133 @@
+[
+    {
+        "numero": 1,
+        "fecha": "10-08-2026 15:14",
+        "cliente": {
+            "nombre": "Nicolas Romero",
+            "cedula": "1729083785",
+            "telefono": "0996079658",
+            "direccion": "Quito",
+            "correo": "nicorom2006@hotmail.com"
+        },
+        "detalle": [
+            {
+                "categoria": "Pizzas",
+                "nombre": "Margarita (Chica)",
+                "precio": 6.5
+            },
+            {
+                "categoria": "Pizzas",
+                "nombre": "Pepperoni (Chica)",
+                "precio": 7.5
+            },
+            {
+                "categoria": "Pizzas",
+                "nombre": "Hawaiana (Grande)",
+                "precio": 11.5
+            },
+            {
+                "categoria": "Postres",
+                "nombre": "Cheesecake",
+                "precio": 3.5
+            },
+            {
+                "categoria": "Otros",
+                "nombre": "Alitas de pollo",
+                "precio": 5.0
+            },
+            {
+                "categoria": "Bebidas",
+                "nombre": "Coca-Cola 1L",
+                "precio": 3.0
+            }
+        ],
+        "subtotal": 37.0,
+        "iva": 5.55,
+        "domicilio": 0.0,
+        "total": 42.55
+    },
+    {
+        "numero": 2,
+        "fecha": "12-08-2026 01:45",
+        "cliente": {
+            "nombre": "Nicolas Romero",
+            "cedula": "1729087385",
+            "telefono": "0994879278",
+            "direccion": "Quito",
+            "correo": "nicorom2006@gmail.com"
+        },
+        "detalle": [
+            {
+                "categoria": "Pizzas",
+                "nombre": "Margarita (Grande)",
+                "precio": 10.5
+            },
+            {
+                "categoria": "Otros",
+                "nombre": "Pan de ajo",
+                "precio": 2.5
+            },
+            {
+                "categoria": "Postres",
+                "nombre": "Volcán de chocolate",
+                "precio": 3.5
+            },
+            {
+                "categoria": "Combos",
+                "nombre": "Combo Individual",
+                "precio": 10.0
+            },
+            {
+                "categoria": "Pizzas",
+                "nombre": "Margarita (Mediana)",
+                "precio": 8.5
+            },
+            {
+                "categoria": "Pizzas",
+                "nombre": "Hawaiana (Chica)",
+                "precio": 7.5
+            }
+        ],
+        "subtotal": 42.5,
+        "iva": 6.375,
+        "domicilio": 0.0,
+        "total": 48.875
+    },
+    {
+        "numero": 3,
+        "fecha": "12-08-2026 09:34",
+        "cliente": {
+            "nombre": "asdawdas",
+            "cedula": "2412154",
+            "telefono": "6523622",
+            "direccion": "asdawsdaw",
+            "correo": "asdawdasdaw"
+        },
+        "detalle": [
+            {
+                "categoria": "Pizzas",
+                "nombre": "Margarita (Chica)",
+                "precio": 6.5
+            },
+            {
+                "categoria": "Pizzas",
+                "nombre": "Especial de la casa (Chica)",
+                "precio": 9.5
+            },
+            {
+                "categoria": "Otros",
+                "nombre": "Alitas de pollo",
+                "precio": 5.0
+            },
+            {
+                "categoria": "Postres",
+                "nombre": "Volcán de chocolate",
+                "precio": 3.5
+            }
+        ],
+        "subtotal": 24.5,
+        "iva": 3.675,
+        "domicilio": 0.0,
+        "total": 28.175
+    }
+]
